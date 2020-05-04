@@ -114,7 +114,7 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 - 5. add pickup_bin (index of 10min intravel to which that trip belongs to).<br/>
 - 6. group by data, based on 'pickup_cluster' and 'pickup_bin'.<br/>
 
-Below are the results of the data cleaning.<br/>
+- Below are the results of the data cleaning.<br/>
 Return with trip times...<br/>
 Remove outliers...<br/>
 Number of pickup records =  10906858.<br/>
@@ -148,3 +148,21 @@ Number of outliers from trip distance analysis: 87318.<br/>
 Number of outliers from speed analysis: 23889.<br/>
 Number of outliers from fare analysis: 5859.<br/>
 Total outliers removed 324635.<br/>
+
+## Smoothing
+
+- We get the unique bins where pickup values are present for each each reigion.<br/>
+- For each cluster region we will collect all the indices of 10min intravels in which the pickups are happened and  we got an observation that there are some pickpbins that doesnt have any pickups.<br/>
+- For every month we get all indices of 10min intravels in which atleast one pickup got happened.<br/>
+
+-There are two ways to fill up these values
+<ul>
+<li> Fill the missing value with 0's</li>
+<li> Fill the missing values with the avg values
+<ul>
+<li> Case 1:(values missing at the start)  <br>Ex1: \_ \_ \_ x =>ceil(x/4), ceil(x/4), ceil(x/4), ceil(x/4) <br> Ex2: \_ \_ x => ceil(x/3), ceil(x/3), ceil(x/3) </li>
+<li> Case 2:(values missing in middle) <br>Ex1: x \_ \_ y => ceil((x+y)/4), ceil((x+y)/4), ceil((x+y)/4), ceil((x+y)/4) <br> Ex2: x \_ \_ \_ y => ceil((x+y)/5), ceil((x+y)/5), ceil((x+y)/5), ceil((x+y)/5), ceil((x+y)/5) </li>
+<li> Case 3:(values missing at the end)  <br>Ex1: x \_ \_ \_  => ceil(x/4), ceil(x/4), ceil(x/4), ceil(x/4) <br> Ex2: x \_  => ceil(x/2), ceil(x/2) </li>
+</ul>
+</li>
+</ul>
