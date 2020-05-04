@@ -1,4 +1,4 @@
-# Taxi-Demand-Prediction
+#  Taxi-Demand-Prediction
 
 # Data Information
 
@@ -92,7 +92,22 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 
 # Data-preperation
 ## Clustering/Segmentation
+- trying different cluster sizes to choose the right K in K-means.<br/>
 - We need to choose number of clusters so that, there are more number of cluster regions.<br/>
 - That are close to any cluster center.<br/>
 - Make sure that the minimum inter cluster should not be very less.<br/>
 
+### Inference:
+- The main objective was to find a optimal min. distance(Which roughly estimates to the radius of a cluster) between the clusters which we got was 40.
+
+## Time-binning:
+- We use 10 minute bins.<br/>
+- We add two more columns 'pickup_cluster'(to which cluster it belogns to) and 'pickup_bins' (to which 10min intravel the trip belongs to)<br/>.
+
+- Till now we cleaned data and prepared data for the months of 2015 and now to do the same operations for months Jan, Feb, March of 2016 we need to do the below steps.<br/>
+- 1. get the dataframe which inlcudes only required colums.<br/>
+- 2. adding trip times, speed, unix time stamp of pickup_time.<br/>
+- 3. remove the outliers based on trip_times, speed, trip_duration, total_amount.<br/>
+- 4. add pickup_cluster to each data point.<br/>
+- 5. add pickup_bin (index of 10min intravel to which that trip belongs to).<br/>
+- 6. group by data, based on 'pickup_cluster' and 'pickup_bin'.<br/>
