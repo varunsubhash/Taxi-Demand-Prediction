@@ -51,9 +51,9 @@ It is inferred from the source https://www.flickr.com/places/info/2459115 that N
 
 <p style="font-size:18px">According to NYC Taxi &amp; Limousine Commision Regulations <b style= "color:blue">the maximum allowed trip duration in a 24 hour interval is 12 hours.</b> </p>
 
-<b>Observation:-</b> 
+<b>Observation:-</b> <p>
 1.The skewed box plot shows the presence of outliers.
 2.We calculate 0-100th percentile value to find where the outlier lies.
 3.We observe that the outlier lies btween 90-100th percentile.
-4.On further inspection we find that outlier lies  between 99-100th percentile after which it has been removed.
+4.On further inspection we find that outlier lies  between 99-100th percentile after which it has been removed.</p>
 
