@@ -107,47 +107,47 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 ## Data cleaning on the remaining data:
 
 - Till now we cleaned data and prepared data for the months of 2015 and now to do the same operations for months Jan, Feb, March of 2016 we need to do the below steps.<br/>
-- 1. get the dataframe which inlcudes only required colums.<br/>
-- 2. adding trip times, speed, unix time stamp of pickup_time.<br/>
-- 3. remove the outliers based on trip_times, speed, trip_duration, total_amount.<br/>
-- 4. add pickup_cluster to each data point.<br/>
-- 5. add pickup_bin (index of 10min intravel to which that trip belongs to).<br/>
-- 6. group by data, based on 'pickup_cluster' and 'pickup_bin'.<br/>
+ 1. get the dataframe which inlcudes only required colums.<br/>
+ 2. adding trip times, speed, unix time stamp of pickup_time.<br/>
+ 3. remove the outliers based on trip_times, speed, trip_duration, total_amount.<br/>
+ 4. add pickup_cluster to each data point.<br/>
+ 5. add pickup_bin (index of 10min intravel to which that trip belongs to).<br/>
+ 6. group by data, based on 'pickup_cluster' and 'pickup_bin'.<br/>
 
 - Below are the results of the data cleaning.<br/>
-Return with trip times...<br/>
-Remove outliers...<br/>
-Number of pickup records =  10906858.<br/>
-Number of outlier coordinates lying outside NY boundaries: 214677.<br/>
-Number of outliers from trip times analysis: 27190.<br/>
-Number of outliers from trip distance analysis: 79742.<br/>
-Number of outliers from speed analysis: 21047.<br/>
-Number of outliers from fare analysis: 4991.<br/>
-Total outliers removed 297784.<br/>
+  Return with trip times...<br/>
+  Remove outliers...<br/>
+  Number of pickup records =  10906858.<br/>
+  Number of outlier coordinates lying outside NY boundaries: 214677.<br/>
+  Number of outliers from trip times analysis: 27190.<br/>
+  Number of outliers from trip distance analysis: 79742.<br/>
+  Number of outliers from speed analysis: 21047.<br/>
+  Number of outliers from fare analysis: 4991.<br/>
+  Total outliers removed 297784.<br/>
 
-Estimating clusters...<br/>
-Final groupbying...<br/>
-Return with trip times...<br/>
-Remove outliers...<br/>
-Number of pickup records =  11382049.<br/>
-Number of outlier coordinates lying outside NY boundaries: 223161.<br/>
-Number of outliers from trip times analysis: 27670.<br/>
-Number of outliers from trip distance analysis: 81902.<br/>
-Number of outliers from speed analysis: 22437.<br/>
-Number of outliers from fare analysis: 5476.<br/>
-Total outliers removed 308177.<br/>
+  Estimating clusters...<br/>
+  Final groupbying...<br/>
+  Return with trip times...<br/>
+  Remove outliers...<br/>
+  Number of pickup records =  11382049.<br/>
+  Number of outlier coordinates lying outside NY boundaries: 223161.<br/>
+  Number of outliers from trip times analysis: 27670.<br/>
+  Number of outliers from trip distance analysis: 81902.<br/>
+  Number of outliers from speed analysis: 22437.<br/>
+  Number of outliers from fare analysis: 5476.<br/>
+  Total outliers removed 308177.<br/>
 
-Estimating clusters...<br/>
-Final groupbying...<br/>
-Return with trip times...<br/>
-Remove outliers...<br/>
-Number of pickup records =  12210952.<br/>
-Number of outlier coordinates lying outside NY boundaries: 232444.<br/>
-Number of outliers from trip times analysis: 30868.<br/>
-Number of outliers from trip distance analysis: 87318.<br/>
-Number of outliers from speed analysis: 23889.<br/>
-Number of outliers from fare analysis: 5859.<br/>
-Total outliers removed 324635.<br/>
+  Estimating clusters...<br/>
+  Final groupbying...<br/>
+  Return with trip times...<br/>
+  Remove outliers...<br/>
+  Number of pickup records =  12210952.<br/>
+  Number of outlier coordinates lying outside NY boundaries: 232444.<br/>
+  Number of outliers from trip times analysis: 30868.<br/>
+  Number of outliers from trip distance analysis: 87318.<br/>
+  Number of outliers from speed analysis: 23889.<br/>
+  Number of outliers from fare analysis: 5859.<br/>
+  Total outliers removed 324635.<br/>
 
 ## Smoothing
 
@@ -160,9 +160,8 @@ Total outliers removed 324635.<br/>
 <li> Fill the missing value with 0's</li>
 <li> Fill the missing values with the avg values
 <ul>
-<li> Case 1:(values missing at the start)  <br>Ex1: \_ \_ \_ x =>ceil(x/4), ceil(x/4), ceil(x/4), ceil(x/4) <br> Ex2: \_ \_ x => ceil(x/3), ceil(x/3), ceil(x/3) </li>
-<li> Case 2:(values missing in middle) <br>Ex1: x \_ \_ y => ceil((x+y)/4), ceil((x+y)/4), ceil((x+y)/4), ceil((x+y)/4) <br> Ex2: x \_ \_ \_ y => ceil((x+y)/5), ceil((x+y)/5), ceil((x+y)/5), ceil((x+y)/5), ceil((x+y)/5) </li>
-<li> Case 3:(values missing at the end)  <br>Ex1: x \_ \_ \_  => ceil(x/4), ceil(x/4), ceil(x/4), ceil(x/4) <br> Ex2: x \_  => ceil(x/2), ceil(x/2) </li>
+<li> Case 1:(values missing at the start)  <br>
+<li> Case 2:(values missing in middle) <br>
 </ul>
 </li>
 </ul>
