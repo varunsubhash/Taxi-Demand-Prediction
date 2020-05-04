@@ -155,7 +155,7 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 - For each cluster region we will collect all the indices of 10min intravels in which the pickups are happened and  we got an observation that there are some pickpbins that doesnt have any pickups.<br/>
 - For every month we get all indices of 10min intravels in which atleast one pickup got happened.<br/>
 
--There are two ways to fill up these values
+- There are two ways to fill up these values
 <ul>
 <li> Fill the missing value with 0's</li>
 <li> Fill the missing values with the avg values
@@ -166,7 +166,7 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 </li>
 </ul>
 - We fill a value of zero for every bin where no pickup data is present.<br> 
-- The count_values: number pickps that are happened in each region for each 10min intervel.It wont have be any value if there are no picksups.<br>
+- The count_values: number pickps that are happened in each region for each 10min intervel.It wont have be any value if there are no     picksups.<br>
 - For every 10min intravel(pickup_bin) we will check it is there in our unique bin.<br>
 - If it is there we will add the count_values[index] to smoothed data,if not we add 0 to the smoothed data.<br>
 - We finally return smoothed data.<br>
