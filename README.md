@@ -52,17 +52,28 @@ It is inferred from the source https://www.flickr.com/places/info/2459115 that N
 <p style="font-size:18px">According to NYC Taxi &amp; Limousine Commision Regulations <b style= "color:blue">the maximum allowed trip duration in a 24 hour interval is 12 hours.</b> </p>
 
 <b>Observation:-</b> <br/>
-1.The skewed box plot shows the presence of outliers.<br/>
-2.We calculate 0-100th percentile value to find where the outlier lies.<br/>
-3.We observe that the outlier lies btween 90-100th percentile.<br/>
-4.On further inspection we find that outlier lies  between 99-100th percentile after which it has been removed.<br/>
+1. We plot box plot to chcek for  the presence of outliers.After plotting it, the presence of outliers are confirmed.<br/>
+2. We calculate 0-100th percentile value to find where the outlier lies.<br/>
+3. We observe that the outlier lies btween 90-100th percentile.<br/>
+4. On further inspection we find that outlier lies  between 99-100th percentile after which it has been removed.<br/>
 
 ### 4. Speed:
+
 <b>Observation:-</b> <br/>
-1.The skewed box plot shows the presence of outliers.<br/>
-2.We calculate 0-100th percentile value to find where the outlier lies.<br/>
-3.We observe that the outlier lies btween 90-100th percentile.<br/>
-4.On further inspection we find that outlier lies  between 99.9-100th percentile after which it has been removed.<br/>
+1. We plot box plot to chcek for  the presence of outliers.After plotting it, the presence of outliers are confirmed.<br/>
+2. We calculate 0-100th percentile value to find where the outlier lies.<br/>
+3. We observe that the outlier lies btween 90-100th percentile.<br/>
+4. On further inspection we find that outlier lies  between 99.9-100th percentile after which it has been removed.<br/>
 
 <b style='font-size:16px'>The avg speed in Newyork speed is 12.45miles/hr, so a cab driver can travel <font color='blue'> 2 miles per 10min on avg.</font> </b>
+
+### 5. Total Fare:
+
+<b>Observation:-</b> <br/>
+1. We plot box plot to chcek for  the presence of outliers.After plotting it, the presence of outliers are confirmed.<br/>
+2. We calculate 0-100th percentile value to find where the outlier lies.<br/>
+3. We observe that the outlier lies btween 90-100th percentile.<br/>
+4. We find that even the 99.9th percentile value doesnt look like an outlier,as there is not much difference between the 99.8th percentile and 99.9th percentile, hence we move on to do graphical analyis.<br/>
+5. By plotting the sorted fare vs index grpahs , we come to a conclusion to remove fare above 1000 as those values are extremly high and unrealistic.
+
 
