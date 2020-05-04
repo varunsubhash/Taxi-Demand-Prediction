@@ -90,3 +90,9 @@ Total outliers removed 377910.<br/>
 
 fraction of data points that remain after removing outliers 0.9703576425607495
 
+# Data-preperation
+## Clustering/Segmentation
+- We need to choose number of clusters so that, there are more number of cluster regions.<br/>
+- That are close to any cluster center.<br/>
+- Make sure that the minimum inter cluster should not be very less.<br/>
+
