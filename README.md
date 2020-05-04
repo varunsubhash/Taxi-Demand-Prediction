@@ -39,7 +39,7 @@ In this section we will be doing univariate analysis and removing outlier/illegi
 
 It is inferred from the source https://www.flickr.com/places/info/2459115 that New York is bounded by the location cordinates(lat,long) - (40.5774, -74.15) & (40.9176,-73.7004) so hence any cordinates not within these cordinates are not considered by us as we are only concerned with pickups which originate within New York.
 
-<b>Observation:-</b> As you can see above that there are some points just outside the boundary but there are a few that are in either South america, Mexico or Canada
+<b>Observation:-</b> Plotting pickup cordinates which are outside the bounding box of New-York  we will collect all the points outside the bounding box of newyork city to outlier_locationswe can see that there are some points just outside the boundary but there are a few that are in either South america, Mexico or Canada.
 
 ### 2. Dropoff Latitude & Dropoff Longitude
 
@@ -56,4 +56,13 @@ It is inferred from the source https://www.flickr.com/places/info/2459115 that N
 2.We calculate 0-100th percentile value to find where the outlier lies.<br/>
 3.We observe that the outlier lies btween 90-100th percentile.<br/>
 4.On further inspection we find that outlier lies  between 99-100th percentile after which it has been removed.<br/>
+
+### 4. Speed:
+<b>Observation:-</b> <br/>
+1.The skewed box plot shows the presence of outliers.<br/>
+2.We calculate 0-100th percentile value to find where the outlier lies.<br/>
+3.We observe that the outlier lies btween 90-100th percentile.<br/>
+4.On further inspection we find that outlier lies  between 99.9-100th percentile after which it has been removed.<br/>
+
+<b style='font-size:16px'>The avg speed in Newyork speed is 12.45miles/hr, so a cab driver can travel <font color='blue'> 2 miles per 10min on avg.</font> </b>
 
