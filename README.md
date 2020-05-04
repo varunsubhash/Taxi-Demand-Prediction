@@ -156,7 +156,6 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 - For every month we get all indices of 10min intravels in which atleast one pickup got happened.<br/>
 
 - There are two ways to fill up these values
-<ul>
 <li> Fill the missing value with 0's</li>
 <li> Fill the missing values with the avg values
 <ul>
@@ -164,7 +163,6 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 <li> Case 2:(values missing in middle) <br>
 </ul>
 </li>
-</ul>
 - We fill a value of zero for every bin where no pickup data is present.<br> 
 - The count_values: number pickps that are happened in each region for each 10min intervel.It wont have be any value if there are no     picksups.<br>
 - For every 10min intravel(pickup_bin) we will check it is there in our unique bin.<br>
