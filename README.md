@@ -165,3 +165,8 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 </ul>
 </li>
 </ul>
+- We fill a value of zero for every bin where no pickup data is present.<br> 
+- The count_values: number pickps that are happened in each region for each 10min intervel.It wont have be any value if there are no picksups.<br>
+- For every 10min intravel(pickup_bin) we will check it is there in our unique bin.<br>
+- If it is there we will add the count_values[index] to smoothed data,if not we add 0 to the smoothed data.<br>
+- We finally return smoothed data.<br>
