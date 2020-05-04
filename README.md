@@ -76,6 +76,8 @@ It is inferred from the source https://www.flickr.com/places/info/2459115 that N
 4. We find that even the 99.9th percentile value doesnt look like an outlier,as there is not much difference between the 99.8th percentile and 99.9th percentile, hence we move on to do graphical analyis.<br/>
 5. By plotting the sorted fare vs index grpahs , we come to a conclusion to remove fare above 1000 as those values are extremly high and unrealistic.
 
+## Remove all outliers/erronous points.
+
 ### Removing outliers in the month of Jan-2015
 
 Number of pickup records =  12748986.<br/>
