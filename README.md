@@ -17,7 +17,7 @@ The data used in the attached datasets were collected and provided to the NYC Ta
 <p>  The SHL program will allow livery vehicle owners to license and outfit their vehicles with green borough taxi branding, meters, credit card machines, and ultimately the right to accept street hails in addition to pre-arranged rides. </p>
 
 <h5>Footnote:</h5>
-In the given notebook we are considering only the yellow taxis for the time period between Jan - Mar 2015 & Jan - Mar 2016
+In this solution we are considering only the yellow taxis for the time period between Jan - Mar 2015 & Jan - Mar 2016
 
 # ML Problem Formulation
 <p><b> Time-series forecasting and Regression</b></p>
@@ -26,3 +26,27 @@ In the given notebook we are considering only the yellow taxis for the time peri
 <p> 
 -To solve the above we would be using data collected in Jan - Mar 2015 to predict the pickups in Jan - Mar 2016.
 </p>
+
+# Performance metrics
+1. Mean Absolute percentage error.
+2. Mean Squared error.
+
+## Data Cleaning
+
+In this section we will be doing univariate analysis and removing outlier/illegitimate values which may be caused due to some error
+
+### 1. Pickup Latitude and Pickup Longitude
+
+It is inferred from the source https://www.flickr.com/places/info/2459115 that New York is bounded by the location cordinates(lat,long) - (40.5774, -74.15) & (40.9176,-73.7004) so hence any cordinates not within these cordinates are not considered by us as we are only concerned with pickups which originate within New York.
+
+<b>Observation:-</b> As you can see above that there are some points just outside the boundary but there are a few that are in either South america, Mexico or Canada
+
+### 2. Dropoff Latitude & Dropoff Longitude
+
+It is inferred from the source https://www.flickr.com/places/info/2459115 that New York is bounded by the location cordinates(lat,long) - (40.5774, -74.15) & (40.9176,-73.7004) so hence any cordinates not within these cordinates are not considered by us as we are only concerned with dropoffs which are within New York.
+
+<b>Observation:-</b> The observations here are similar to those obtained while analysing pickup latitude and longitude
+
+### 3. Trip Durations:
+
+<p style="font-size:18px">According to NYC Taxi &amp; Limousine Commision Regulations <b style= "color:blue">the maximum allowed trip duration in a 24 hour interval is 12 hours.</b> </p>
