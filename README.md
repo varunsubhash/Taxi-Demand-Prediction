@@ -47,6 +47,6 @@ It is inferred from the source https://www.flickr.com/places/info/2459115 that N
 
 <b>Observation:-</b> The observations here are similar to those obtained while analysing pickup latitude and longitude
 
-### 3. Trip Durations:
+ ### 3. Trip Durations:
 
 <p style="font-size:18px">According to NYC Taxi &amp; Limousine Commision Regulations <b style= "color:blue">the maximum allowed trip duration in a 24 hour interval is 12 hours.</b> </p>
