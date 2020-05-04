@@ -15,7 +15,6 @@ The data used in the attached datasets were collected and provided to the NYC Ta
 
 <h5> Green Taxi: Street Hail Livery (SHL) </h5>
 <p>  The SHL program will allow livery vehicle owners to license and outfit their vehicles with green borough taxi branding, meters, credit card machines, and ultimately the right to accept street hails in addition to pre-arranged rides. </p>
-<p> Credits: Quora</p>
 
 <h5>Footnote:</h5>
 In the given notebook we are considering only the yellow taxis for the time period between Jan - Mar 2015 & Jan - Mar 2016
