@@ -2,7 +2,7 @@
 
 # Data Information
 
-Get the data from : http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml (2016 data)
+Get the data from : http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml (2016 data).
 The data used in the attached datasets were collected and provided to the NYC Taxi and Limousine Commission (TLC)
 
 ## Information on taxis:
