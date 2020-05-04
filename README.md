@@ -76,4 +76,15 @@ It is inferred from the source https://www.flickr.com/places/info/2459115 that N
 4. We find that even the 99.9th percentile value doesnt look like an outlier,as there is not much difference between the 99.8th percentile and 99.9th percentile, hence we move on to do graphical analyis.<br/>
 5. By plotting the sorted fare vs index grpahs , we come to a conclusion to remove fare above 1000 as those values are extremly high and unrealistic.
 
+### Removing outliers in the month of Jan-2015
+----
+Number of pickup records =  12748986.<br/>
+Number of outlier coordinates lying outside NY boundaries: 293919.<br/>
+Number of outliers from trip times analysis: 23889.<br/>
+Number of outliers from trip distance analysis: 92597.<br/>
+Number of outliers from speed analysis: 24473.<br/>
+Number of outliers from fare analysis: 5275.<br/>
+Total outliers removed 377910.<br/>
+---
+fraction of data points that remain after removing outliers 0.9703576425607495
 
