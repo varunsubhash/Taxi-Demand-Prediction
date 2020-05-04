@@ -104,6 +104,8 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 - We use 10 minute bins.<br/>
 - We add two more columns 'pickup_cluster'(to which cluster it belogns to) and 'pickup_bins' (to which 10min intravel the trip belongs to)<br/>.
 
+## Data cleaning on the remaining data:
+
 - Till now we cleaned data and prepared data for the months of 2015 and now to do the same operations for months Jan, Feb, March of 2016 we need to do the below steps.<br/>
 - 1. get the dataframe which inlcudes only required colums.<br/>
 - 2. adding trip times, speed, unix time stamp of pickup_time.<br/>
@@ -111,3 +113,38 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 - 4. add pickup_cluster to each data point.<br/>
 - 5. add pickup_bin (index of 10min intravel to which that trip belongs to).<br/>
 - 6. group by data, based on 'pickup_cluster' and 'pickup_bin'.<br/>
+
+Below are the results of the data cleaning.<br/>
+Return with trip times...<br/>
+Remove outliers...<br/>
+Number of pickup records =  10906858.<br/>
+Number of outlier coordinates lying outside NY boundaries: 214677.<br/>
+Number of outliers from trip times analysis: 27190.<br/>
+Number of outliers from trip distance analysis: 79742.<br/>
+Number of outliers from speed analysis: 21047.<br/>
+Number of outliers from fare analysis: 4991.<br/>
+Total outliers removed 297784.<br/>
+
+Estimating clusters...<br/>
+Final groupbying...<br/>
+Return with trip times...<br/>
+Remove outliers...<br/>
+Number of pickup records =  11382049.<br/>
+Number of outlier coordinates lying outside NY boundaries: 223161.<br/>
+Number of outliers from trip times analysis: 27670.<br/>
+Number of outliers from trip distance analysis: 81902.<br/>
+Number of outliers from speed analysis: 22437.<br/>
+Number of outliers from fare analysis: 5476.<br/>
+Total outliers removed 308177.<br/>
+
+Estimating clusters...<br/>
+Final groupbying...<br/>
+Return with trip times...<br/>
+Remove outliers...<br/>
+Number of pickup records =  12210952.<br/>
+Number of outlier coordinates lying outside NY boundaries: 232444.<br/>
+Number of outliers from trip times analysis: 30868.<br/>
+Number of outliers from trip distance analysis: 87318.<br/>
+Number of outliers from speed analysis: 23889.<br/>
+Number of outliers from fare analysis: 5859.<br/>
+Total outliers removed 324635.<br/>
