@@ -158,8 +158,8 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 - There are two ways to fill up these values.<br>
   1. Fill the missing value with 0's</li>
   2. Fill the missing values with the avg values.<br> 
-     Case 1:(values missing at the start).<br>
-     Case 2:(values missing in middle).<br>
+     Case 1: (values missing at the start).<br>
+     Case 2: (values missing in middle).<br>
 
 - We fill a value of zero for every bin where no pickup data is present.<br> 
 - The count_values: number pickps that are happened in each region for each 10min intervel.It wont have be any value if there are no     picksups.<br>
