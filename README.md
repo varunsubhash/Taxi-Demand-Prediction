@@ -19,3 +19,11 @@ The data used in the attached datasets were collected and provided to the NYC Ta
 
 <h5>Footnote:</h5>
 In the given notebook we are considering only the yellow taxis for the time period between Jan - Mar 2015 & Jan - Mar 2016
+
+# ML Problem Formulation
+<p><b> Time-series forecasting and Regression</b></p>
+<br>
+-<i> To find number of pickups, given location cordinates(latitude and longitude) and time, in the query reigion and surrounding regions.</i>
+<p> 
+To solve the above we would be using data collected in Jan - Mar 2015 to predict the pickups in Jan - Mar 2016.
+</p>
