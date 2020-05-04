@@ -23,7 +23,7 @@ In the given notebook we are considering only the yellow taxis for the time peri
 # ML Problem Formulation
 <p><b> Time-series forecasting and Regression</b></p>
 <br>
--<i> To find number of pickups, given location cordinates(latitude and longitude) and time, in the query reigion and surrounding regions.</i>
+- To find number of pickups, given location cordinates(latitude and longitude) and time, in the query reigion and surrounding regions.
 <p> 
 -To solve the above we would be using data collected in Jan - Mar 2015 to predict the pickups in Jan - Mar 2016.
 </p>
