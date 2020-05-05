@@ -402,16 +402,16 @@ $\begin{align}P^{'}_{t} = \alpha*P_{t-1} + (1-\alpha)*P^{'}_{t-1}  \end{align}$<
 ## Comparison between baseline models
 We have chosen our error metric for comparison between models as <b>MAPE (Mean Absolute Percentage Error)</b> so that we can know that on an average how good is our model with predictions and <b>MSE (Mean Squared Error)</b> is also used so that we have a clearer understanding as to how well our forecasting model performs with outliers so that we make sure that there is not much of a error margin between our prediction and the actual value.<br>.
 
-## Error Metric Matrix (Forecasting Methods) - MAPE & MSE
+ Error Metric Matrix (Forecasting Methods) - MAPE & MSE
 --------------------------------------------------------------------------------------------------------
-Moving Averages (Ratios) -                             MAPE:  0.182115517339       MSE:  400.0625504032258<br>
-Moving Averages (2016 Values) -                        MAPE:  0.14292849687        MSE:  174.84901993727598<br>
+- Moving Averages (Ratios) -                             MAPE:  0.182115517339       MSE:  400.0625504032258<br>
+- Moving Averages (2016 Values) -                        MAPE:  0.14292849687        MSE:  174.84901993727598<br>
 --------------------------------------------------------------------------------------------------------
-Weighted Moving Averages (Ratios) -                    MAPE:  0.178486925438       MSE:  384.01578741039424<br>
-Weighted Moving Averages (2016 Values) -               MAPE:  0.135510884362       MSE:  162.46707549283155<br>
+- Weighted Moving Averages (Ratios) -                    MAPE:  0.178486925438       MSE:  384.01578741039424<br>
+- Weighted Moving Averages (2016 Values) -               MAPE:  0.135510884362       MSE:  162.46707549283155<br>
 --------------------------------------------------------------------------------------------------------
-Exponential Moving Averages (Ratios) -              MAPE:  0.177835501949       MSE:  378.34610215053766<br>
-Exponential Moving Averages (2016 Values) -         MAPE:  0.135091526367       MSE:  159.73614471326164<br>
+- Exponential Moving Averages (Ratios) -              MAPE:  0.177835501949       MSE:  378.34610215053766<br>
+- Exponential Moving Averages (2016 Values) -         MAPE:  0.135091526367       MSE:  159.73614471326164<br>
 - From the above matrix it is inferred that the best forecasting model for our prediction would be:- 𝑃′𝑡=𝛼∗𝑃𝑡−1+(1−𝛼)∗𝑃′𝑡−1 i.e Exponential Moving Averages using 2016 Values.<br>
 
 ## Regression Models
@@ -453,14 +453,14 @@ Before we start predictions using the tree based regression models we take 3 mon
  
  - Error Metric Matrix (Tree Based Regression Methods) -  MAPE
 --------------------------------------------------------------------------------------------------------
-Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048.<br>
-Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204.<br>
-Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401.<br>
-Random Forest Regression -                   Train:  0.0918514693197      Test:  0.127141622928.<br>
- - Error Metric Matrix (Tree Based Regression Methods) -  MAPE.<br>
+- Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048.<br>
+- Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204.<br>
+- Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401.<br>
+- Random Forest Regression -                   Train:  0.0918514693197      Test:  0.127141622928.<br>
+- Error Metric Matrix (Tree Based Regression Methods) -  MAPE.<br>
 --------------------------------------------------------------------------------------------------------
-Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048.<br>
-Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204.<br>
-Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401.<br>
-Random Forest Regression -                   Train:  0.0917619544199      Test:  0.127244647137.<br>
-XgBoost Regression -                         Train:  0.129387355679       Test:  0.126861699078.<br>
+- Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048.<br>
+- Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204.<br>
+- Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401.<br>
+- Random Forest Regression -                   Train:  0.0917619544199      Test:  0.127244647137.<br>
+- XgBoost Regression -                         Train:  0.129387355679       Test:  0.126861699078.<br>
