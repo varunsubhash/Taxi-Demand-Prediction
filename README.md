@@ -418,3 +418,49 @@ From the above matrix it is inferred that the best forecasting model for our pre
 
 ### Train-Test Split
 Before we start predictions using the tree based regression models we take 3 months of 2016 pickup data and split it such that for every region we have 70% data in train and 30% in test, ordered date-wise for every region.<br>
+
+
+### Using Random Forest Regressor
+- Training a hyper-parameter tuned random forest regressor on our train data.<br>
+- Predicting on test data using our trained random forest model.<br> 
+- The models regr1 is already hyper parameter tuned.<br>
+- The parameters that we got above are found using grid search.<br>
+- Feature importances based on analysis using random forest.<br>
+   - Index(['ft_5', 'ft_4', 'ft_3', 'ft_2', 'ft_1', 'lat', 'lon', 'weekday',
+       'exp_avg'],
+      dtype='object')
+[ 0.00477243  0.07614745  0.14289548  0.1857027   0.23859285  0.00227886
+  0.00261956  0.00162121  0.34536947]
+  
+### Using XgBoost Regressor.
+- Training a hyper-parameter tuned Xg-Boost regressor on our train data.<br>
+- Predicting with our trained Xg-Boost regressor.<br>
+- The models x_model is already hyper parameter tuned.<br>
+- The parameters that we got above are found using grid search.<br>
+- Feature importances.<br>
+  {'exp_avg': 806,
+ 'ft_1': 1008,
+ 'ft_2': 1016,
+ 'ft_3': 863,
+ 'ft_4': 746,
+ 'ft_5': 1053,
+ 'lat': 602,
+ 'lon': 612,
+ 'weekday': 195}
+ 
+ 
+ ### Calculating the error metric values for various models
+ 
+ - Error Metric Matrix (Tree Based Regression Methods) -  MAPE
+--------------------------------------------------------------------------------------------------------
+Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048
+Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204
+Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401
+Random Forest Regression -                   Train:  0.0918514693197      Test:  0.127141622928
+ - Error Metric Matrix (Tree Based Regression Methods) -  MAPE
+--------------------------------------------------------------------------------------------------------
+Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048
+Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204
+Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401
+Random Forest Regression -                   Train:  0.0917619544199      Test:  0.127244647137
+XgBoost Regression -                         Train:  0.129387355679       Test:  0.126861699078
