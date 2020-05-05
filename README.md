@@ -453,14 +453,14 @@ Before we start predictions using the tree based regression models we take 3 mon
  
  - Error Metric Matrix (Tree Based Regression Methods) -  MAPE
 --------------------------------------------------------------------------------------------------------
-Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048
-Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204
-Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401
-Random Forest Regression -                   Train:  0.0918514693197      Test:  0.127141622928
- - Error Metric Matrix (Tree Based Regression Methods) -  MAPE
+Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048.<br>
+Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204.<br>
+Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401.<br>
+Random Forest Regression -                   Train:  0.0918514693197      Test:  0.127141622928.<br>
+ - Error Metric Matrix (Tree Based Regression Methods) -  MAPE.<br>
 --------------------------------------------------------------------------------------------------------
-Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048
-Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204
-Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401
-Random Forest Regression -                   Train:  0.0917619544199      Test:  0.127244647137
-XgBoost Regression -                         Train:  0.129387355679       Test:  0.126861699078
+Baseline Model -                             Train:  0.140052758787       Test:  0.136531257048.<br>
+Exponential Averages Forecasting -           Train:  0.13289968436       Test:  0.129361804204.<br>
+Linear Regression -                         Train:  0.13331572016       Test:  0.129120299401.<br>
+Random Forest Regression -                   Train:  0.0917619544199      Test:  0.127244647137.<br>
+XgBoost Regression -                         Train:  0.129387355679       Test:  0.126861699078.<br>
