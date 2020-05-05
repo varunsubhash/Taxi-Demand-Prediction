@@ -418,7 +418,7 @@ Now we get into modelling in order to forecast the pickup densities for the mont
 ### Simple Moving Averages
 - The First Model used is the Moving Averages Model which uses the previous n values in order to predict the next value <br>
 
-- Using Ratio Values - $\begin{align}R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3} .... R_{t-n} )/n \end{align}$.<br>
+- Using Ratio Values - R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3} .... R_{t-n} )/n \end.<br>
 
 - For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 3 is optimal for getting the best results using Moving Averages using previous Ratio values therefore we get $\begin{align}R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3})/3 \end{align}$.<br>
 
