@@ -338,6 +338,7 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 
 ## Time-binning:
 - We use 10 minute bins.<br/>
+- Using unix time stamp makes it easier to create bins.<br/>
 - We add two more columns 'pickup_cluster'(to which cluster it belogns to) and 'pickup_bins' (to which 10min intravel the trip belongs to)<br/>.
 
 ## Data cleaning on the remaining data:
