@@ -1,4 +1,5 @@
 #  Taxi-Demand-Prediction
+- The man objective is to predict the number of pickup points for each region as accuratley as possible.
 
 # Data Information
 
