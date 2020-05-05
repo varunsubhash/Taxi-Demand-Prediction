@@ -355,3 +355,66 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 - For every 10min intravel(pickup_bin) we will check it is there in our unique bin.<br>
 - If it is there we will add the count_values[index] to smoothed data,if not we add 0 to the smoothed data.<br>
 - We finally return smoothed data.<br>
+
+- When you are using smoothing we are looking at the future number of pickups which might cause a data leakage.<br>
+
+- So we use smoothing for jan 2015th data since it acts as our training data.<br>
+- And we use simple fill_misssing method for 2016th data.<br>
+
+## Modelling: Baseline Models
+
+Now we get into modelling in order to forecast the pickup densities for the months of Jan, Feb and March of 2016 for which we are using multiple models with two variations 
+1. Using Ratios of the 2016 data to the 2015 data.
+2. Using Previous known values of the 2016 data itself to predict the future values
+
+### Simple Moving Averages
+- The First Model used is the Moving Averages Model which uses the previous n values in order to predict the next value <br>
+
+- Using Ratio Values - $\begin{align}R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3} .... R_{t-n} )/n \end{align}$.<br>
+
+- For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 3 is optimal for getting the best results using Moving Averages using previous Ratio values therefore we get $\begin{align}R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3})/3 \end{align}$.<br>
+
+- Next we use the Moving averages of the 2016  values itself to predict the future value using $\begin{align}P_{t} = ( P_{t-1} + P_{t-2} + P_{t-3} .... P_{t-n} )/n \end{align}$.<br>
+
+- For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 1 is optimal for getting the best results using Moving Averages using previous 2016 values therefore we get $\begin{align}P_{t} = P_{t-1} \end{align}$.<br>
+
+### Weighted Moving Averages
+The Moving Avergaes Model used gave equal importance to all the values in the window used, but we know intuitively that the future is more likely to be similar to the latest values and less similar to the older values. Weighted Averages converts this analogy into a mathematical relationship giving the highest weight while computing the averages to the latest previous value and decreasing weights to the subsequent older ones.<br>
+
+- Weighted Moving Averages using Ratio Values - $\begin{align}R_{t} = ( N*R_{t-1} + (N-1)*R_{t-2} + (N-2)*R_{t-3} .... 1*R_{t-n} )/(N*(N+1)/2) \end{align}$.<br>.
+
+- For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 5 is optimal for getting the best results using Weighted Moving Averages using previous Ratio values therefore we get $\begin{align} R_{t} = ( 5*R_{t-1} + 4*R_{t-2} + 3*R_{t-3} + 2*R_{t-4} + R_{t-5} )/15 \end{align}$<br>.
+
+- Weighted Moving Averages using Previous 2016 Values - $\begin{align}P_{t} = ( N*P_{t-1} + (N-1)*P_{t-2} + (N-2)*P_{t-3} .... 1*P_{t-n} )/(N*(N+1)/2) \end{align}$<br>.
+
+- For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 2 is optimal for getting the best results using Weighted Moving Averages using previous 2016 values therefore we get $\begin{align} P_{t} = ( 2*P_{t-1} + P_{t-2} )/3 \end{align}$.<br>
+
+### Exponential  Weighted Moving Averages
+Through weighted averaged we have satisfied the analogy of giving higher weights to the latest value and decreasing weights to the subsequent ones but we still do not know which is the correct weighting scheme as there are infinetly many possibilities in which we can assign weights in a non-increasing order and tune the the hyperparameter window-size. To simplify this process we use Exponential Moving Averages which is a more logical way towards assigning weights and at the same time also using an optimal window-size.<br>
+
+In exponential moving averages we use a single hyperparameter alpha $\begin{align}(\alpha)\end{align}$ which is a value between 0 & 1 and based on the value of the hyperparameter alpha the weights and the window sizes are configured.<br>
+For eg. If $\begin{align}\alpha=0.9\end{align}$ then the number of days on which the value of the current iteration is based is~$\begin{align}1/(1-\alpha)=10\end{align}$ i.e. we consider values 10 days prior before we predict the value for the current iteration. Also the weights are assigned using $\begin{align}2/(N+1)=0.18\end{align}$ ,where N = number of prior values being considered, hence from this it is implied that the first or latest value is assigned a weight of 0.18 which keeps exponentially decreasing for the subsequent values.<br>
+
+$\begin{align}R^{'}_{t} = \alpha*R_{t-1} + (1-\alpha)*R^{'}_{t-1}  \end{align}$.<br>
+
+$\begin{align}P^{'}_{t} = \alpha*P_{t-1} + (1-\alpha)*P^{'}_{t-1}  \end{align}$<br>.
+
+## Comparison between baseline models
+We have chosen our error metric for comparison between models as <b>MAPE (Mean Absolute Percentage Error)</b> so that we can know that on an average how good is our model with predictions and <b>MSE (Mean Squared Error)</b> is also used so that we have a clearer understanding as to how well our forecasting model performs with outliers so that we make sure that there is not much of a error margin between our prediction and the actual value.<br>.
+
+Error Metric Matrix (Forecasting Methods) - MAPE & MSE
+--------------------------------------------------------------------------------------------------------
+Moving Averages (Ratios) -                             MAPE:  0.182115517339       MSE:  400.0625504032258
+Moving Averages (2016 Values) -                        MAPE:  0.14292849687        MSE:  174.84901993727598
+--------------------------------------------------------------------------------------------------------
+Weighted Moving Averages (Ratios) -                    MAPE:  0.178486925438       MSE:  384.01578741039424
+Weighted Moving Averages (2016 Values) -               MAPE:  0.135510884362       MSE:  162.46707549283155
+--------------------------------------------------------------------------------------------------------
+Exponential Moving Averages (Ratios) -              MAPE:  0.177835501949       MSE:  378.34610215053766
+Exponential Moving Averages (2016 Values) -         MAPE:  0.135091526367       MSE:  159.73614471326164
+From the above matrix it is inferred that the best forecasting model for our prediction would be:- 𝑃′𝑡=𝛼∗𝑃𝑡−1+(1−𝛼)∗𝑃′𝑡−1 i.e Exponential Moving Averages using 2016 Values.<br>
+
+## Regression Models
+
+### Train-Test Split
+Before we start predictions using the tree based regression models we take 3 months of 2016 pickup data and split it such that for every region we have 70% data in train and 30% in test, ordered date-wise for every region.<br>
