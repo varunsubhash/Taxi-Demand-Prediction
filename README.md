@@ -185,8 +185,7 @@ We Have collected all yellow taxi trips data from jan-2015 to dec-2016(Will be u
 
 
 # Features in the data set
-http://github.com - automatic!
-[GitHub](http://github.com)
+
 
 
 # ML Problem Formulation
