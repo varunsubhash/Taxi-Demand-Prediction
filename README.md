@@ -227,15 +227,15 @@ In this section we will be doing univariate analysis and removing outlier/illegi
 
 ### 1. Pickup Latitude and Pickup Longitude
 
-It is inferred from the source https://www.flickr.com/places/info/2459115 that New York is bounded by the location cordinates(lat,long) - (40.5774, -74.15) & (40.9176,-73.7004) so hence any cordinates not within these cordinates are not considered by us as we are only concerned with pickups which originate within New York.
+-It is inferred from the source https://www.flickr.com/places/info/2459115 that New York is bounded by the location cordinates(lat,long) - (40.5774, -74.15) & (40.9176,-73.7004) so hence any cordinates not within these cordinates are not considered by us as we are only concerned with pickups which originate within New York.
 
-<b>Observation:-</b> Plotting pickup cordinates which are outside the bounding box of New-York  we will collect all the points outside the bounding box of newyork city to outlier_locationswe can see that there are some points just outside the boundary but there are a few that are in either South america, Mexico or Canada.
+<b>Observation:-</b> Plotting pickup cordinates which are outside the bounding box of New-York  we will collect all the points outside the bounding box of newyork city to outlier_locations we can see that there are some points just outside the boundary but there are a few that are in either South america, Mexico or Canada.
 
 ### 2. Dropoff Latitude & Dropoff Longitude
 
 It is inferred from the source https://www.flickr.com/places/info/2459115 that New York is bounded by the location cordinates(lat,long) - (40.5774, -74.15) & (40.9176,-73.7004) so hence any cordinates not within these cordinates are not considered by us as we are only concerned with dropoffs which are within New York.
 
-<b>Observation:-</b> The observations here are similar to those obtained while analysing pickup latitude and longitude
+<b>Observation:-</b> The observations here are similar to those obtained while analysing pickup latitude and longitude. <br/>
 
  ### 3. Trip Durations:
 
@@ -283,9 +283,55 @@ fraction of data points that remain after removing outliers 0.9703576425607495
 # Data-preperation
 ## Clustering/Segmentation
 - Trying different cluster sizes to choose the right K in K-means.<br/>
-- We need to choose number of clusters so that, there are more number of cluster regions.<br/>
-- That are close to any cluster center.<br/>
-- Make sure that the minimum inter cluster should not be very less.<br/>
+- We need to choose number of clusters so that, there are more number of cluster regions that are close to any cluster center.<br/>
+- Make sure that the minimum inter cluster distance be between 0.5 to 2 miles.<br/>
+- Make sure that the minimum inter cluster distance be between 0.5 to 2 miles.<br/>
+- On writing a functions to find the minimum cluster distance for different size of clusters we get the below results.
+
+   - On choosing a cluster size of  10 <br/>
+   - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 2.0 <br/>
+   - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 8.0 <br/>
+   - Min inter-cluster distance =  1.0933194607372518 <br/>
+---
+   - On choosing a cluster size of  20 <br/>
+   - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 4.0 <br/>
+   - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 16.0 <br/>
+   - Min inter-cluster distance =  0.7123318236197774 <br/>
+---
+   - On choosing a cluster size of  30 <br/>
+   - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 8.0 <br/>
+   - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 22.0 <br/>
+   - Min inter-cluster distance =  0.5179286172497254 <br/>
+---
+   - On choosing a cluster size of  40 <br/>
+   - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 9.0 <br/>
+   - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 31.0 <br/>
+   - Min inter-cluster distance =  0.5064095487015858 <br/>
+---
+   - On choosing a cluster size of  50 <br/>
+   - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 12.0 <br/>
+   - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 38.0 <br/>
+   - Min inter-cluster distance =  0.36495419250817024 <br/>
+---
+   - On choosing a cluster size of  60 <br/>
+   - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 14.0 <br/>
+   - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 46.0 <br/>
+   - Min inter-cluster distance =  0.346654501371586 <br/>
+---
+   - On choosing a cluster size of  70 <br/>
+   - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 16.0 <br/>
+   - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 54.0 <br/>
+   - Min inter-cluster distance =  0.30468071844965394 <br/>
+---
+   - On choosing a cluster size of  80 <br/>
+   - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 18.0 <br/>
+   - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 62.0 <br/>
+   - Min inter-cluster distance =  0.29187627608454664 <br/>
+---
+  - On choosing a cluster size of  90 
+  - Avg. Number of Clusters within the vicinity (i.e. intercluster-distance < 2): 21.0 <br/>
+  - Avg. Number of Clusters outside the vicinity (i.e. intercluster-distance > 2): 69.0 <br/>
+  - Min inter-cluster distance =  0.18237562550345013 <br/>
 
 ### Inference:
 - The main objective was to find a optimal min. distance(Which roughly estimates to the radius of a cluster) between the clusters which we got was 40.
