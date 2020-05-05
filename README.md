@@ -418,13 +418,13 @@ Now we get into modelling in order to forecast the pickup densities for the mont
 ### Simple Moving Averages
 - The First Model used is the Moving Averages Model which uses the previous n values in order to predict the next value <br>
 
-- Using Ratio Values - R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3} .... R_{t-n} )/n \end.<br>
+- Using Ratio Values - R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3} .... R_{t-n} )/n .<br>
 
-- For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 3 is optimal for getting the best results using Moving Averages using previous Ratio values therefore we get $\begin{align}R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3})/3 \end{align}$.<br>
+- For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 3 is optimal for getting the best results using Moving Averages using previous Ratio values therefore we get R_{t} = ( R_{t-1} + R_{t-2} + R_{t-3})/3 .<br>
 
-- Next we use the Moving averages of the 2016  values itself to predict the future value using $\begin{align}P_{t} = ( P_{t-1} + P_{t-2} + P_{t-3} .... P_{t-n} )/n \end{align}$.<br>
+- Next we use the Moving averages of the 2016  values itself to predict the future value using P_{t} = ( P_{t-1} + P_{t-2} + P_{t-3} .... P_{t-n} )/n .<br>
 
-- For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 1 is optimal for getting the best results using Moving Averages using previous 2016 values therefore we get $\begin{align}P_{t} = P_{t-1} \end{align}$.<br>
+- For the above the Hyperparameter is the window-size (n) which is tuned manually and it is found that the window-size of 1 is optimal for getting the best results using Moving Averages using previous 2016 values therefore we get P_{t} = P_{t-1} .<br>
 
 ### Weighted Moving Averages
 The Moving Avergaes Model used gave equal importance to all the values in the window used, but we know intuitively that the future is more likely to be similar to the latest values and less similar to the older values. Weighted Averages converts this analogy into a mathematical relationship giving the highest weight while computing the averages to the latest previous value and decreasing weights to the subsequent older ones.<br>
